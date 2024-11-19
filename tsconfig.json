@@ -24,7 +24,7 @@
       "@widgets/*": ["src/widgets/*"],
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/shared/components/*"],
-      "@hooks/*": ["src/shared/hooks/*"],
+      "@hooks/*": ["src/shared/userExperience/*"],
       "@types/*": ["src/shared/types/*"],
       "@utils/*": ["src/shared/utils/*"],
       "@assets/*": ["src/assets/*"]
