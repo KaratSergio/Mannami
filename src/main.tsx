@@ -9,7 +9,7 @@ if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <BrowserRouter
-        basename="/repository_name"
+        basename="/mannami"
         future={{
           v7_startTransition: true,
           v7_relativeSplatPath: true,
