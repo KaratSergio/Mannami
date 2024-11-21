@@ -1,12 +1,15 @@
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-interface ButtonProps {
-  children: ReactNode;
-  type?: 'button' | 'submit' | 'reset';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
 }
 
-const Button = ({ children, type }: ButtonProps) => {
-  return <button type={type}>{children}</button>;
+const Button = ({ children, className, ...props }: ButtonProps) => {
+  return (
+    <button {...props} className={className}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
