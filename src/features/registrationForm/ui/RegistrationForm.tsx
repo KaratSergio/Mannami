@@ -21,11 +21,12 @@ const ComponentName = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('name')} error={errors.name?.message} placeholder="name" />
-      <Input {...register('email')} error={errors.email?.message} placeholder="email" />
+      <Input {...register('name')} error={errors.name?.message} placeholder="name" type="text" />
+      <Input {...register('email')} error={errors.email?.message} placeholder="email" type="text" />
       <Input
         {...register('password')}
         type="password"
+        withPasswordToggled
         error={errors.password?.message}
         placeholder="password"
       />
