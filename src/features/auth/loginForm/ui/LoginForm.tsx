@@ -1,6 +1,6 @@
 import { Button, Input } from '@shared/formControls';
 import { LoginFormInputs } from '../model/types';
-import validation from '@shared/formControls/validationSchemas';
+import validation from '@features/auth/validationSchemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 
