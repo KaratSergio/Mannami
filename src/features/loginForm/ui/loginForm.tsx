@@ -1,27 +1,26 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import validation from '@shared/formControls/validationSchemas';
 import { Button, Input } from '@shared/formControls';
-import { RegistrationFormInputs } from '../model/types';
+import { LoginFormInputs } from '../model/types';
+import validation from '@shared/formControls/validationSchemas';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
 
-const ComponentName = () => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(validation.registrationSchema),
+    resolver: yupResolver(validation.loginSchema),
   });
 
-  const onSubmit = (data: RegistrationFormInputs) => {
+  const onSubmit = (data: LoginFormInputs) => {
     console.log(data);
     reset();
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('name')} error={errors.name?.message} placeholder="name" type="text" />
       <Input {...register('email')} error={errors.email?.message} placeholder="email" type="text" />
       <Input
         {...register('password')}
@@ -35,4 +34,4 @@ const ComponentName = () => {
   );
 };
 
-export default ComponentName;
+export default LoginForm;
