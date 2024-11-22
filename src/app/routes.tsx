@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import HomePage from '../pages/HomePage/HomePage';
-import EventDetailsPage from '@pages/EventDetailsPage/EventDetailsPage';
-import UserProfilePage from '@pages/UserProfilePage/UserProfilePage';
-import PremiumPage from '@pages/PremiumPage/PremiumPage';
-import RecommendationsPage from '@pages/RecommendationsPage/RecommendationsPage';
-import ErrorPage from '@pages/ErrorPage/ErrorPage';
-import RegistrationPage from '@pages/RegistrationPage/RegistrationPage';
-import LoginPage from '@pages/LoginPage/LoginPage';
+const HomePage = React.lazy(() => import('../pages/HomePage/HomePage'));
+const EventDetailsPage = React.lazy(() => import('@pages/EventDetailsPage/EventDetailsPage'));
+const UserProfilePage = React.lazy(() => import('@pages/UserProfilePage/UserProfilePage'));
+const PremiumPage = React.lazy(() => import('@pages/PremiumPage/PremiumPage'));
+const RecommendationsPage = React.lazy(() => import('@pages/RecommendationsPage/RecommendationsPage'));
+const ErrorPage = React.lazy(() => import('@pages/ErrorPage/ErrorPage'));
+const RegistrationPage = React.lazy(() => import('@pages/RegistrationPage/RegistrationPage'));
+const LoginPage = React.lazy(() => import('@pages/LoginPage/LoginPage'));
 
 const RoutesConfig: React.FC = () => (
-  <Routes>
-    <Route path="/" element={<HomePage />} />
-    <Route path="/event/:id" element={<EventDetailsPage />} />
-    <Route path="/profile" element={<UserProfilePage />} />
-    <Route path="/premium" element={<PremiumPage />} />
-    <Route path="/recommendations" element={<RecommendationsPage />} />
-    <Route path="/registration" element={<RegistrationPage />} />
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="*" element={<ErrorPage />} />
-  </Routes>
+  <Suspense fallback={<div>Loading...</div>}>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/event/:id" element={<EventDetailsPage />} />
+      <Route path="/profile" element={<UserProfilePage />} />
+      <Route path="/premium" element={<PremiumPage />} />
+      <Route path="/recommendations" element={<RecommendationsPage />} />
+      <Route path="/registration" element={<RegistrationPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
+  </Suspense>
 );
 
 export default RoutesConfig;
