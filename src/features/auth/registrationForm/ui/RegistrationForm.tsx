@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import validation from '@shared/formControls/validationSchemas';
+import validation from '@features/auth/validationSchemas';
 import { Button, Input } from '@shared/formControls';
 import { RegistrationFormInputs } from '../model/types';
 
-const ComponentName = () => {
+const RegistrationForm = () => {
   const {
     register,
     handleSubmit,
@@ -35,4 +35,4 @@ const ComponentName = () => {
   );
 };
 
-export default ComponentName;
+export default RegistrationForm;
