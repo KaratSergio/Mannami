@@ -12,7 +12,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "typeRoots": ["node_modules/@types", "./types"],
+    "typeRoots": ["node_modules/@types", "./types", "./src/redux"],
     "types": ["react", "react-dom", "react-router-dom"],
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
@@ -27,7 +27,8 @@
       "@hooks/*": ["src/shared/userExperience/*"],
       "@types/*": ["src/shared/types/*"],
       "@utils/*": ["src/shared/utils/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@redux": ["src/redux"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/main.tsx"],

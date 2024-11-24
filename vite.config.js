@@ -17,6 +17,7 @@ export default defineConfig({
       '@types': '/src/shared/types',
       '@utils': '/src/shared/utils',
       '@assets': '/src/assets',
+      '@redux': '/src/redux',
     },
   },
   build: {
