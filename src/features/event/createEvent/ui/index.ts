@@ -1,3 +1,4 @@
-import CreateEvent from './CreateEvent';
+import CreateEventForm from './CreateEventForm';
+import CheckboxGroup from './CheckboxGroup';
 
-export { CreateEvent };
+export { CreateEventForm, CheckboxGroup };
