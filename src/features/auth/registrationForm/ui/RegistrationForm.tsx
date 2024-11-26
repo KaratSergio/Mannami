@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import validation from '@features/auth/validationSchemas';
 import { Button, Input } from '@shared/formControls';
 import { RegistrationFormInputs } from '../model/types';
+import { registrationSchema } from '../lib/validateRegister';
 
 const RegistrationForm = () => {
   const {
@@ -11,7 +11,7 @@ const RegistrationForm = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(validation.registrationSchema),
+    resolver: yupResolver(registrationSchema),
   });
 
   const onSubmit = (data: RegistrationFormInputs) => {

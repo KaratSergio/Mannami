@@ -1,7 +1,7 @@
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import CheckboxGroup from './CheckboxGroup';
-import { EventFormData } from '../types';
+import { EventFormData } from '../model/types';
 import { eventValidationSchema } from '../lib/validateEvent';
 import DatePickerInput from '@shared/userExperience/DatePickerInput/DatePickerInput';
 
@@ -10,6 +10,7 @@ const CreateEventForm = () => {
     control,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<EventFormData>({
     resolver: yupResolver<EventFormData>(eventValidationSchema),
     defaultValues: {
@@ -26,6 +27,7 @@ const CreateEventForm = () => {
 
   const onSubmit = (data: EventFormData) => {
     console.log(data);
+    reset();
   };
 
   return (

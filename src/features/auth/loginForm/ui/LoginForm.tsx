@@ -1,8 +1,8 @@
 import { Button, Input } from '@shared/formControls';
 import { LoginFormInputs } from '../model/types';
-import validation from '@features/auth/validationSchemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { loginSchema } from '../lib/validateLogin';
 
 const LoginForm = () => {
   const {
@@ -11,7 +11,7 @@ const LoginForm = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(validation.loginSchema),
+    resolver: yupResolver(loginSchema),
   });
 
   const onSubmit = (data: LoginFormInputs) => {
