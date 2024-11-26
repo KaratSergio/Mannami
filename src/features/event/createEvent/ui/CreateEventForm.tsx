@@ -34,15 +34,18 @@ const CreateEventForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <label>Event Date and Time:</label>
+        <label>Event Date:</label>
         <Controller
           name="eventDate"
           control={control}
           render={({ field }) => (
-            <DatePickerInput value={field.value} onChange={(date: Date | null) => field.onChange(date)} />
+            <DatePickerInput
+              value={field.value}
+              onChange={(date: Date | null) => field.onChange(date)}
+              error={errors.eventDate?.message}
+            />
           )}
         />
-        {errors.eventDate && <span>{errors.eventDate.message}</span>}
       </div>
 
       <div>

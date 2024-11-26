@@ -1,6 +1,7 @@
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import css from './DatePicker.module.css';
+import './DatePicker.css';
+import { Input } from '@shared/formControls';
 
 interface DatePickerInputProps {
   value: Date | null;
@@ -10,14 +11,7 @@ interface DatePickerInputProps {
 
 const DatePickerInput = ({ value, onChange, error }: DatePickerInputProps) => (
   <div className="relative">
-    <DatePicker
-      selected={value}
-      onChange={onChange}
-      showTimeSelect
-      dateFormat="Pp"
-      className={`${css.customDatePickerInput} form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-300 focus:ring-opacity-50`}
-      calendarClassName={css.reactDatePicker}
-    />
+    <DatePicker selected={value} onChange={onChange} customInput={<Input />} />
 
     {error && <p className="text-red-800 mt-1 text-sm">{error}</p>}
   </div>
