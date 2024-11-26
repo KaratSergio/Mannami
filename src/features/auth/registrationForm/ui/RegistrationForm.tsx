@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import validation from '@features/auth/validationSchemas';
 import { Button, Input } from '@shared/formControls';
 import { RegistrationFormInputs } from '../model/types';
+import { registrationSchema } from '../lib/validateRegister';
 
 const RegistrationForm = () => {
   const {
@@ -11,7 +11,7 @@ const RegistrationForm = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(validation.registrationSchema),
+    resolver: yupResolver(registrationSchema),
   });
 
   const onSubmit = (data: RegistrationFormInputs) => {
@@ -20,15 +20,16 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('name')} error={errors.name?.message} placeholder="name" type="text" />
-      <Input {...register('email')} error={errors.email?.message} placeholder="email" type="text" />
+    <form className="max-w-md" onSubmit={handleSubmit(onSubmit)}>
+      <Input {...register('name')} error={errors.name?.message} placeholder="name" autocomplete="name" />
+      <Input {...register('email')} error={errors.email?.message} placeholder="email" autocomplete="email" />
       <Input
         {...register('password')}
         type="password"
         withPasswordToggled
         error={errors.password?.message}
         placeholder="password"
+        autocomplete="password"
       />
       <Button type="submit">Send</Button>
     </form>

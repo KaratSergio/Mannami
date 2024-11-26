@@ -10,3 +10,8 @@ export interface EventFormData {
   maxParticipants: number;
   audience: Audience;
 }
+
+export interface CheckboxGroupProps {
+  control: any;
+  errors: any;
+}
