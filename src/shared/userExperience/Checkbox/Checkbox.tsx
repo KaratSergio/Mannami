@@ -9,7 +9,14 @@ interface CheckboxProps {
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ label, checked, onChange, ...props }, ref) => (
   <label>
-    <input type="checkbox" ref={ref} checked={checked} onChange={onChange} {...props} />
+    <input
+      className="form-checkbox rounded text-blue-500"
+      type="checkbox"
+      ref={ref}
+      checked={checked}
+      onChange={onChange}
+      {...props}
+    />
     {label}
   </label>
 ));

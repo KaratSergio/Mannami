@@ -31,6 +31,6 @@
       "@redux": ["src/redux"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/main.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/main.tsx", "declarations.d.ts"],
   "exclude": ["node_modules"]
 }

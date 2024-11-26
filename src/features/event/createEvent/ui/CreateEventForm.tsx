@@ -4,6 +4,7 @@ import CheckboxGroup from './CheckboxGroup';
 import { EventFormData } from '../model/types';
 import { eventValidationSchema } from '../lib/validateEvent';
 import DatePickerInput from '@shared/userExperience/DatePickerInput/DatePickerInput';
+import Input from '@shared/formControls/Input';
 
 const CreateEventForm = () => {
   const {
@@ -46,8 +47,11 @@ const CreateEventForm = () => {
 
       <div>
         <label>Event Location:</label>
-        <Controller name="location" control={control} render={({ field }) => <input {...field} />} />
-        {errors.location && <span>{errors.location.message}</span>}
+        <Controller
+          name="location"
+          control={control}
+          render={({ field }) => <Input {...field} error={errors.location?.message} placeholder="Enter location" />}
+        />
       </div>
 
       <div>
@@ -55,9 +59,15 @@ const CreateEventForm = () => {
         <Controller
           name="maxParticipants"
           control={control}
-          render={({ field }) => <input type="number" {...field} />}
+          render={({ field }) => (
+            <Input
+              {...field}
+              type="number"
+              error={errors.maxParticipants?.message}
+              placeholder="Enter max participants"
+            />
+          )}
         />
-        {errors.maxParticipants && <span>{errors.maxParticipants.message}</span>}
       </div>
 
       <CheckboxGroup control={control} errors={errors} />
