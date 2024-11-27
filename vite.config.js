@@ -30,5 +30,5 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
-  base: '/mannami/',
+  base: '/mannami',
 });
