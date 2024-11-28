@@ -1,1 +1,3 @@
-export { default as RegistrationForm } from './ui/RegistrationForm';
+export * from './lib';
+export * from './ui';
+// export * from './model';

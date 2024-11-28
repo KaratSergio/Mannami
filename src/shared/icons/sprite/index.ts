@@ -1,1 +1,1 @@
-export { default } from './sprite.svg';
+export { default as spritePath } from './sprite.svg';

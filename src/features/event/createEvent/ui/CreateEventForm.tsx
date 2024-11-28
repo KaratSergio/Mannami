@@ -3,8 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import CheckboxGroup from './CheckboxGroup';
 import { EventFormData } from '../model/types';
 import { eventValidationSchema } from '../lib/validateEvent';
-import DatePickerInput from '@shared/userExperience/DatePickerInput/DatePickerInput';
-import Input from '@shared/formControls/Input';
+import DatePickerInput from '@shared/formControls/DatePickerInput/DatePickerInput';
+import { Input } from '@shared/formControls';
 
 const CreateEventForm = () => {
   const {

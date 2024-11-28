@@ -1,8 +1,9 @@
-import { Button, Input } from '@shared/formControls';
+import { Input } from '@shared/formControls';
+import { Button } from '@shared/userExperience';
 import { LoginFormInputs } from '../model/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { loginSchema } from '../lib/validateLogin';
+import { loginSchema } from '../lib';
 
 const LoginForm = () => {
   const {

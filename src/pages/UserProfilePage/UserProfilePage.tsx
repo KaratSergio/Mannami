@@ -1,6 +1,6 @@
 const UserProfilePage = () => {
   return (
-    <div>
+    <div className="container flex flex-col items-center bg-slate-400">
       <h1>User profile page</h1>
     </div>
   );

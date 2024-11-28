@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button, Input } from '@shared/formControls';
+import { Input } from '@shared/formControls';
+import { Button } from '@shared/userExperience';
 import { RegistrationFormInputs } from '../model/types';
-import { registrationSchema } from '../lib/validateRegister';
+import { registrationSchema } from '../lib';
 
 const RegistrationForm = () => {
   const {

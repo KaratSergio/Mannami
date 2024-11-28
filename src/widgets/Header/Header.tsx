@@ -1,12 +1,17 @@
 import { Navbar } from '../Navbar';
-import { Button } from '@shared/formControls';
+import { Button } from '@shared/userExperience/Button';
 
 const Header = () => {
   return (
-    <header className="flex gap-10 mx-auto bg-slate-300 p-4">
-      <p>Logotype</p>
-      <Navbar />
-      <Button>Login</Button>
+    <header className="container flex gap-10 bg-slate-300 py-4 justify-between">
+      <div className="flex w-full max-w-[690px] justify-between">
+        <p>Logotype</p>
+        <Navbar />
+      </div>
+      <div className="flex gap-10">
+        <Button>Login</Button>
+        <Button>Register</Button>
+      </div>
     </header>
   );
 };

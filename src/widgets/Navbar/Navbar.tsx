@@ -5,13 +5,13 @@ const Navbar = () => {
     <nav className="bg-gray-400">
       <ul className="flex gap-8">
         <li>
-          <NavLink to="/">Page-1</NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/profile">Page-2</NavLink>
+          <NavLink to="/profile">Profile</NavLink>
         </li>
         <li>
-          <NavLink to="/premium">Page-3</NavLink>
+          <NavLink to="/premium">Premium</NavLink>
         </li>
       </ul>
     </nav>

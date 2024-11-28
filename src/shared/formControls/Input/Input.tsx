@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, forwardRef, useState } from 'react';
-import Button from '../Button';
+import { Button } from '@shared/userExperience/Button';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;

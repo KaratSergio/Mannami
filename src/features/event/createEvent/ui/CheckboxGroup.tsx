@@ -1,4 +1,4 @@
-import Checkbox from '@shared/userExperience/Checkbox/Checkbox';
+import Checkbox from '@shared/formControls/Checkbox/Checkbox';
 import { Controller } from 'react-hook-form';
 import { CheckboxGroupProps } from '../model/types';
 
