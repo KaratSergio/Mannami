@@ -5,7 +5,7 @@ export const eventValidationSchema = Yup.object().shape({
   location: Yup.string().required('Event location is required'),
   maxParticipants: Yup.number()
     .required('Maximum number of participants is required')
-    .min(1, 'The number of participants must be greater than 0'),
+    .min(1, 'The number must be greater than 0'),
   audience: Yup.object().shape({
     adults: Yup.bool().required(),
     men: Yup.bool().required(),

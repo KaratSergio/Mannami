@@ -1,5 +1,5 @@
 import { Input } from '@shared/formControls';
-import { Button } from '@shared/userExperience';
+import { Button, Title } from '@shared/userExperience';
 import { LoginFormInputs } from '../model/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -21,17 +21,36 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="max-w-md" onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('email')} error={errors.email?.message} placeholder="email" autocomplete="email" />
+    <form
+      className="flex flex-col justify-center items-center w-full max-w-sm mx-auto"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <Title level={2} className="text-center mb-6">
+        Login
+      </Title>
+
+      <Input
+        {...register('email')}
+        error={errors.email?.message}
+        placeholder="Email"
+        autocomplete="email"
+        className="w-full"
+      />
       <Input
         {...register('password')}
         type="password"
         withPasswordToggled
         error={errors.password?.message}
-        placeholder="password"
+        placeholder="Password"
         autocomplete="password"
+        className="w-full"
       />
-      <Button type="submit">Send</Button>
+      <Button
+        type="submit"
+        className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition mb-[12px]"
+      >
+        Sign In
+      </Button>
     </form>
   );
 };

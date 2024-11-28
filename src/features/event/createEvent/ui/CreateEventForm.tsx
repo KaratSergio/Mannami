@@ -5,6 +5,7 @@ import { EventFormData } from '../model/types';
 import { eventValidationSchema } from '../lib/validateEvent';
 import DatePickerInput from '@shared/formControls/DatePickerInput/DatePickerInput';
 import { Input } from '@shared/formControls';
+import { Button } from '@shared/userExperience';
 
 const CreateEventForm = () => {
   const {
@@ -32,9 +33,9 @@ const CreateEventForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="flex-1 p-6 bg-white shadow-md rounded-md">
       <div>
-        <label>Event Date:</label>
+        <label className="block text-sm font-medium text-gray-700">Event Date:</label>
         <Controller
           name="eventDate"
           control={control}
@@ -49,16 +50,18 @@ const CreateEventForm = () => {
       </div>
 
       <div>
-        <label>Event Location:</label>
+        <label className="block text-sm font-medium text-gray-700">Event Location:</label>
         <Controller
           name="location"
           control={control}
-          render={({ field }) => <Input {...field} error={errors.location?.message} placeholder="Enter location" />}
+          render={({ field }) => (
+            <Input {...field} error={errors.location?.message} placeholder="Enter location" className="w-full" />
+          )}
         />
       </div>
 
       <div>
-        <label>Maximum Number of Participants:</label>
+        <label className="block text-sm font-medium text-gray-700">Maximum Number of Participants:</label>
         <Controller
           name="maxParticipants"
           control={control}
@@ -68,14 +71,20 @@ const CreateEventForm = () => {
               type="number"
               error={errors.maxParticipants?.message}
               placeholder="Enter max participants"
+              className="w-full"
             />
           )}
         />
       </div>
 
-      <CheckboxGroup control={control} errors={errors} />
+      <div className="space-y-4">
+        <p className="block text-sm font-medium text-gray-700">Target Audience:</p>
+        <CheckboxGroup control={control} errors={errors} />
+      </div>
 
-      <button type="submit">Create Event</button>
+      <Button className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition" type="submit">
+        Create Event
+      </Button>
     </form>
   );
 };

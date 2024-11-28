@@ -2,11 +2,12 @@ import { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
+  onClick?: () => void;
 }
 
-const Button = ({ children, className, ...props }: ButtonProps) => {
+const Button = ({ children, className, onClick, ...props }: ButtonProps) => {
   return (
-    <button {...props} className={className}>
+    <button {...props} onClick={onClick} className={`${className}`}>
       {children}
     </button>
   );
