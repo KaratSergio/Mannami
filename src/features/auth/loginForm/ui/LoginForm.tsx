@@ -1,5 +1,5 @@
 import { Input } from '@shared/formControls';
-import { Button } from '@shared/userExperience';
+import { Button, Title } from '@shared/userExperience';
 import { LoginFormInputs } from '../model/types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -25,7 +25,9 @@ const LoginForm = () => {
       className="flex flex-col justify-center items-center w-full max-w-sm mx-auto"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+      <Title level={2} className="text-center mb-6">
+        Login
+      </Title>
 
       <Input
         {...register('email')}
@@ -49,13 +51,6 @@ const LoginForm = () => {
       >
         Sign In
       </Button>
-
-      <div className="flex justify-center items-center space-x-2 text-sm">
-        <p>Don't have an account?</p>
-        <a href="#" className="text-indigo-600 hover:text-indigo-700 font-semibold">
-          Sign Up
-        </a>
-      </div>
     </form>
   );
 };

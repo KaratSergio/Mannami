@@ -1,7 +1,11 @@
+import { CreateEventForm } from '@features/event/createEvent';
+import { Title } from '@shared/userExperience';
+
 const HomePage = () => {
   return (
     <div className="container flex flex-col items-center bg-slate-400">
-      <h1 className="">Home page</h1>
+      <Title>Home page</Title>
+      <CreateEventForm />
     </div>
   );
 };

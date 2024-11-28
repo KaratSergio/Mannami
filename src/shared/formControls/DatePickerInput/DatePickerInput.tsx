@@ -10,11 +10,7 @@ interface DatePickerInputProps {
 }
 
 const DatePickerInput = ({ value, onChange, error }: DatePickerInputProps) => (
-  <div className="relative">
-    <DatePicker selected={value} onChange={onChange} customInput={<Input />} />
-
-    {error && <p className="text-red-800 mt-1 text-sm">{error}</p>}
-  </div>
+  <DatePicker selected={value} onChange={onChange} customInput={<Input className="w-full" error={error} />} />
 );
 
 export default DatePickerInput;
