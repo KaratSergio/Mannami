@@ -21,17 +21,41 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="max-w-md" onSubmit={handleSubmit(onSubmit)}>
-      <Input {...register('email')} error={errors.email?.message} placeholder="email" autocomplete="email" />
+    <form
+      className="flex flex-col justify-center items-center w-full max-w-sm mx-auto"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+
+      <Input
+        {...register('email')}
+        error={errors.email?.message}
+        placeholder="Email"
+        autocomplete="email"
+        className="w-full"
+      />
       <Input
         {...register('password')}
         type="password"
         withPasswordToggled
         error={errors.password?.message}
-        placeholder="password"
+        placeholder="Password"
         autocomplete="password"
+        className="w-full"
       />
-      <Button type="submit">Send</Button>
+      <Button
+        type="submit"
+        className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition mb-[12px]"
+      >
+        Sign In
+      </Button>
+
+      <div className="flex justify-center items-center space-x-2 text-sm">
+        <p>Don't have an account?</p>
+        <a href="#" className="text-indigo-600 hover:text-indigo-700 font-semibold">
+          Sign Up
+        </a>
+      </div>
     </form>
   );
 };
