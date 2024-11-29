@@ -1,2 +1,3 @@
-export * from './Header';
-export * from './Navbar';
+export * from './HeaderWidget';
+export * from './NavbarWidget';
+export * from './EventListWidget';

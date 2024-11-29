@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 
 const HomePage = React.lazy(() => import('../pages/HomePage/HomePage'));
+const EventListPage = React.lazy(() => import('@pages/EventListPage/EventListPage'));
 const EventDetailsPage = React.lazy(() => import('@pages/EventDetailsPage/EventDetailsPage'));
 const UserProfilePage = React.lazy(() => import('@pages/UserProfilePage/UserProfilePage'));
 const PremiumPage = React.lazy(() => import('@pages/PremiumPage/PremiumPage'));
@@ -16,6 +17,7 @@ const RoutesConfig: React.FC = () => (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/events" element={<EventListPage />} />
         <Route path="/event/:id" element={<EventDetailsPage />} />
         <Route path="/profile" element={<UserProfilePage />} />
         <Route path="/premium" element={<PremiumPage />} />
