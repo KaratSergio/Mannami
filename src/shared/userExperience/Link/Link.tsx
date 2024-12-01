@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-interface PropsLink {
+interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
-  path: string;
-  styles?: string;
+  to: string;
+  className?: string;
 }
 
-const Link = ({ children, path, styles = '' }: PropsLink) => {
+const Link = ({ children, to, className = '', ...rest }: LinkProps) => {
   return (
-    <RouterLink to={path} className={`text-indigo-600 hover:text-indigo-700 font-semibold ${styles}`}>
+    <RouterLink to={to} className={`text-indigo-600 hover:text-indigo-700 font-semibold ${className}`} {...rest}>
       {children}
     </RouterLink>
   );
