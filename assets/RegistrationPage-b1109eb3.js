@@ -1,1 +1,0 @@
-import{r as o,j as e,B as r,M as a,l as i}from"./index-cee59efe.js";const d=()=>{const[s,n]=o.useState(!1),t=()=>{n(!s)};return e.jsxs(e.Fragment,{children:[e.jsx("h1",{children:"Register"}),e.jsx(r,{type:"button",onClick:t,className:"bg-indigo-600 text-white py-2 px-4 rounded-md",children:"Open"}),s&&e.jsx(a,{onClose:t,children:e.jsx(i,{})})]})};export{d as default};
