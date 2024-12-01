@@ -1,15 +1,14 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { useEffect } from 'react';
 import { Button } from '../Button';
 import { Icon } from '@shared/icons';
 
-interface PropsModal {
+interface ModalProps {
   children: ReactNode;
   onClose: () => void;
 }
 
-const Modal = ({ children, onClose }: PropsModal) => {
+const Modal = ({ children, onClose }: ModalProps) => {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {

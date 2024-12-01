@@ -1,36 +1,15 @@
-import { useState } from 'react';
-import { Link, Modal, Button } from '@shared/userExperience';
-import { NavbarWidget } from '@widgets';
-import { LoginForm, RegistrationForm } from '@features/auth';
+import { Link } from '@shared/userExperience';
+import { NavbarWidget, NavbarAuthWidget } from '@widgets';
 
 const HeaderWidget = () => {
-  const [openModal, setOpenModal] = useState<'login' | 'register' | null>(null);
-
-  const openLoginModal = () => setOpenModal('login');
-  const openRegisterModal = () => setOpenModal('register');
-  const closeModal = () => setOpenModal(null);
-
   return (
     <header className="container flex gap-10 bg-slate-300 py-4 justify-between">
       <div className="flex w-full max-w-[690px] justify-between">
-        <Link path="/">Logotype</Link>
+        <Link to="/">Logotype</Link>
         <NavbarWidget />
       </div>
-      <div className="flex gap-10">
-        <Button onClick={openLoginModal}>Login</Button>
-        <Button onClick={openRegisterModal}>Register</Button>
-      </div>
 
-      {openModal === 'login' && (
-        <Modal onClose={closeModal}>
-          <LoginForm />
-        </Modal>
-      )}
-      {openModal === 'register' && (
-        <Modal onClose={closeModal}>
-          <RegistrationForm />
-        </Modal>
-      )}
+      <NavbarAuthWidget />
     </header>
   );
 };

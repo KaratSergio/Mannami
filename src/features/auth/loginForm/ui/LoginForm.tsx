@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { loginSchema } from '../lib';
 
-const LoginForm = () => {
+const LoginForm = ({ close }: { close: () => void }) => {
   const {
     register,
     handleSubmit,
@@ -18,6 +18,7 @@ const LoginForm = () => {
   const onSubmit = (data: LoginFormInputs) => {
     console.log(data);
     reset();
+    close();
   };
 
   return (

@@ -5,7 +5,7 @@ import { Button, Title } from '@shared/userExperience';
 import { RegistrationFormInputs } from '../model/types';
 import { registrationSchema } from '../lib';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ close }: { close: () => void }) => {
   const {
     register,
     handleSubmit,
@@ -18,6 +18,7 @@ const RegistrationForm = () => {
   const onSubmit = (data: RegistrationFormInputs) => {
     console.log(data);
     reset();
+    close();
   };
 
   return (

@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 
-interface Props {
+interface TitleProps {
   children: ReactNode;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   className?: string;
 }
 
-const Title = ({ children, level = 1, className = '' }: Props) => {
+const Title = ({ children, level = 1, className = '' }: TitleProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const baseStyles: Record<number, string> = {
