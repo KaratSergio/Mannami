@@ -1,11 +1,11 @@
 import { Title } from '../Title';
 
-interface PropsTextBlock {
+interface TextBlockProps {
   title: string;
   content: string;
 }
 
-const TextBlock = ({ title, content }: PropsTextBlock) => {
+const TextBlock = ({ title, content }: TextBlockProps) => {
   return (
     <div>
       <Title className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">{title}</Title>
