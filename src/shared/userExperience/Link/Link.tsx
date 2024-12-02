@@ -9,7 +9,7 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const Link = ({ children, to, className = '', ...rest }: LinkProps) => {
   return (
-    <RouterLink to={to} className={`text-indigo-600 hover:text-indigo-700 font-semibold ${className}`} {...rest}>
+    <RouterLink to={to} className={`${className}`} {...rest}>
       {children}
     </RouterLink>
   );
