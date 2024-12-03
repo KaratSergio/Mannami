@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 import { RootState } from '@redux';
 import { EventResponse, selectAllEvents } from '@entities/event';
 
-const selectFilterState = (state: RootState) => state.filter;
+export const selectFilterState = (state: RootState) => state.filter;
 
 export const filteredEvents = createSelector([selectFilterState, selectAllEvents], (filters, events) => {
   return events.filter((event: EventResponse) => {

@@ -1,3 +1,1 @@
-import FilterEvents from './FilterEvents';
-
-export { FilterEvents };
+export { default as FilterEvents } from './FilterEvents';
