@@ -36,17 +36,18 @@ const DatePickerInput = ({ value, onChange, error, onConfirm, onCancel }: DatePi
       onChange={onChange}
       locale={ru}
       customInput={<Input className="w-full" error={error} />}
+      minDate={new Date()}
       renderCustomHeader={({ date, changeYear, decreaseMonth, increaseMonth }) => (
         <div className="flex flex-col items-center gap-[10px] mb-[24px]">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex justify-between items-center w-full text-[#ff571e]">
             <button onClick={() => changeYear(getYear(date) - 1)}>{'<'}</button>
-            <span>{getYear(date)}</span>
+            <span className="text-[#2C2C2C]">{getYear(date)}</span>
             <button onClick={() => changeYear(getYear(date) + 1)}>{'>'}</button>
           </div>
 
-          <div className="flex justify-between items-center w-full">
+          <div className="flex justify-between items-center w-full text-[#ff571e]">
             <button onClick={decreaseMonth}>{'<'}</button>
-            <span>{months[getMonth(date)]}</span>
+            <span className="text-[#2C2C2C]">{months[getMonth(date)]}</span>
             <button onClick={increaseMonth}>{'>'}</button>
           </div>
         </div>

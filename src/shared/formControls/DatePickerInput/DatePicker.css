@@ -1,11 +1,3 @@
-.react-datepicker__tab-loop {
-  position: absolute;
-}
-
-.react-datepicker__calendar-icon {
-  z-index: 9;
-}
-
 .react-datepicker {
   max-width: 304px;
   border-radius: 14px;
@@ -21,64 +13,6 @@
   padding-top: 12px;
   padding-bottom: 12px;
   position: relative;
-}
-
-.react-datepicker__navigation {
-  top: 12px;
-  background: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 24px;
-  width: 24px;
-  text-indent: -999em;
-  overflow: hidden;
-}
-
-.react-datepicker__navigation--previous {
-  padding: 4px 8px 4px 7px;
-  left: 12px;
-}
-
-.react-datepicker__navigation--next {
-  padding: 4px 7px 4px 8px;
-  right: 12px;
-}
-
-.react-datepicker__navigation-icon::before {
-  transform: unset;
-  left: unset;
-  border-color: unset;
-  border-style: unset;
-  border-width: unset;
-  width: 9px;
-  height: 16px;
-  content: '';
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 6px;
-}
-
-/* .react-datepicker__navigation-icon--previous::before {
-  width: 24px;
-  background-image: url('../../img/arrow-left.png');
-}
-
-.react-datepicker__navigation-icon--next::before {
-  width: 24px;
-  background-image: url('../../img/arrow-right.png');
-} */
-
-.react-datepicker__header:not(.react-datepicker__header--has-time-select) {
-  border-top-right-radius: 12px;
-}
-
-.react-datepicker__current-month {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin: unset;
 }
 
 .react-datepicker__month {
@@ -119,24 +53,48 @@
   margin: 0;
 }
 
-.react-datepicker__day--outside-month {
-  color: #ababab;
-}
-
 .react-datepicker__day-name {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex: 1 1 auto;
-
   text-transform: capitalize;
   margin: 0;
 }
 
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #fff;
+  color: inherit;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+
 .react-datepicker__day--today {
-  all: unset !important;
-  display: flex; /* Восстановить flex, чтобы элементы отображались корректно */
-  justify-content: center;
-  align-items: center;
+  font-weight: 400;
+}
+
+.react-datepicker__day--today:hover {
+  background-color: #f0f0f0 !important;
+  color: inherit !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #2c2c2c;
+}
+
+.react-datepicker__day--outside-month {
+  color: #ababab;
+}
+
+.react-datepicker__day--disabled.react-datepicker__day--outside-month {
+  color: #ababab;
+}
+
+.react-datepicker__day--disabled:hover {
+  cursor: not-allowed;
+  background-color: inherit;
 }
