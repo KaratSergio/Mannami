@@ -1,1 +1,0 @@
-import{j as e}from"./index-ba5763eb.js";const s=()=>e.jsx("div",{className:"container flex flex-col items-center bg-slate-400",children:e.jsx("h1",{children:"User profile page"})});export{s as default};
